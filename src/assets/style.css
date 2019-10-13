@@ -1,0 +1,118 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin: 2px;
+}
+
+.inline-li {
+  display: inline-block;
+}
+
+.inline-ul {
+  display: flex;
+}
+
+.button-new-field {
+  height: 50px; 
+  width: 50px;
+  border: dashed 1px black; 
+  text-align: center;
+  font-size: 35px;
+  cursor: pointer;
+  line-height: 50px;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-field-card {
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.field-view {
+  height: 50px;
+  width: 200px;
+  border: dashed 1px black;
+  display: flex;
+  flex-direction: row;
+}
+
+.move-btn {
+  height: 100%;  
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;  
+}
+
+.move-left {
+  float: left;
+  border-right: dashed 1px black;
+}
+
+.move-right {  
+  float: right;
+  border-left: dashed 1px black;  
+}
+
+.element-data {
+  height: 100%;  
+  padding: 1px;
+  flex: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.styles-list {
+  height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-column {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-column * {
+  flex: 1 1;
+}
+
+.card-column input {
+  max-width: 160px;
+}
+
+.card-styles-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-styles-header {
+  display: flex;
+  justify-content: space-between;
+}
