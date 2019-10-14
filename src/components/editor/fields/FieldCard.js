@@ -34,7 +34,7 @@ export function FieldCard(props) {
 
   return <div className="modal-container">
     <div className="modal-field-card">
-      <div>
+      <div className="modal-field-body">
         <div className="card-row">
           <span className="card-column">
             <label htmlFor="key">Key</label>
@@ -64,10 +64,17 @@ export function FieldCard(props) {
               )}
             </select>
           </span>
-          <span className="card-column">
-            <label htmlFor="placeholder">Placeholder</label>
-            <input onChange={(event) => changeData('placeholder', event.target.value)} type="text" id="placeholder" placeholder="placeholder" value={field.placeholder || ""}/>
-          </span>
+          {["button", "reset", "submit"].indexOf(field.type) != -1 ?
+            <span className="card-column"> 
+              <label htmlFor="methodName">On click</label>
+              <input onChange={(event) => changeData('methodName', event.target.value)} type="text" id="methodName" placeholder="methodName" value={field.methodName || ""}/>
+            </span>
+          :
+            <span className="card-column"> 
+              <label htmlFor="placeholder">Placeholder</label>
+              <input onChange={(event) => changeData('placeholder', event.target.value)} type="text" id="placeholder" placeholder="placeholder" value={field.placeholder || ""}/>
+            </span>
+          }
         </div>
         <div className="card-styles-row">
           <div className="card-styles-header">
@@ -95,7 +102,7 @@ export function FieldCard(props) {
           </ul>
         </div> */}
       </div>
-      <div>
+      <div className="modal-field-bottom">
         <button onClick={saveAndClose}>&#10003;</button>
         <button onClick={closeModal}>&#10005;</button>        
       </div>

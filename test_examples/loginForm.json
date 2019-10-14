@@ -23,8 +23,8 @@
       "type": "password",
       "styles": [
         {
-          "key": "background-color",
-          "value": "white"
+          "key": "backgroundColor",
+          "value": "red"
         }
       ]
     }
@@ -35,7 +35,8 @@
       "class": "login",
       "title": "Log in",
       "ref": "login",
-      "type": "button"
+      "type": "button",
+      "methodName": "consoleOk"
     }
   ]
 ]

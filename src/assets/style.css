@@ -45,6 +45,18 @@ li {
   height: 500px;
   background-color: #fff;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-field-body {
+  flex: 1;
+}
+
+.modal-field-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .field-view {
