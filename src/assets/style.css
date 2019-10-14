@@ -53,6 +53,7 @@ li {
   border: dashed 1px black;
   display: flex;
   flex-direction: row;
+  margin: 21px 0;
 }
 
 .move-btn {
@@ -115,4 +116,16 @@ li {
 .card-styles-header {
   display: flex;
   justify-content: space-between;
+}
+
+.rotate-sign {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.move-row-btn {
+  border: dashed 1px black;
+  margin: 1px 0;
+  text-align: center;
+  cursor: pointer;
 }

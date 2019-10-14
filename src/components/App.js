@@ -1,10 +1,20 @@
 import React, { Fragment } from 'react';
-import Redactor from './editor/Editor';
+import Editor from './editor/Editor';
+import Builder from './builder/Builder';
 
+const jsonData = require("../../test_examples/loginForm.json");
 
 function App() {
+  // let data = {};
+  // jsonData.forEach((row) => {
+  //   row.forEach((field) => {
+  //     if (["", "button", "reset", "submit"].indexOf(field.type) == -1)
+  //       data[field.key] = null;
+  //   });
+  // });
   return <Fragment>
-    <Redactor/>
+    {/* <Editor/> */}
+    <Builder cardField={{ data: {}, view: jsonData }}/>
   </Fragment>
 }
 

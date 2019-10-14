@@ -1,0 +1,41 @@
+[
+  [
+    {
+      "key": "name",
+      "class": "name",
+      "title": "User name",
+      "ref": "name",
+      "placeholder": "name",
+      "type": "text",
+      "styles": [
+        {
+          "key": "color",
+          "value": "green"
+        }
+      ]
+    },
+    {
+      "key": "password",
+      "class": "password",
+      "title": "User Password",
+      "ref": "password",
+      "placeholder": "password",
+      "type": "password",
+      "styles": [
+        {
+          "key": "background-color",
+          "value": "white"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "key": "login",
+      "class": "login",
+      "title": "Log in",
+      "ref": "login",
+      "type": "button"
+    }
+  ]
+]
