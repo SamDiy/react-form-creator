@@ -8,13 +8,19 @@ function App() {
 
   const [data, setData] = useState({});
 
+  const [card, setCard] = useState({ rows: [] });
+
   const onChangeData = (newData) => {
     setData(newData);
   }
 
+  const onChangeCard = (newCard) => {
+    setCard(newCard);
+  }
+
   return <Fragment>
-    <Editor/>
-    {/* <Builder onChangeData={onChangeData} cardField={{ data, view: jsonData }}/> */}
+    {/* <Editor onChangeCard={onChangeCard} card={card}/> */}
+    <Builder onChangeData={onChangeData} cardField={{ data, view: jsonData.rows }}/>
   </Fragment>
 }
 

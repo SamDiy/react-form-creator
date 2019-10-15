@@ -3,7 +3,7 @@ import { FieldCard } from './FieldCard';
 
 export function Field(props) {
 
-  let { field, changeFieldPosition, fieldIndex, rowIndex, saveField } = props;
+  let { field, changeFieldPosition, fieldIndex, rowIndex, saveField, deleteField } = props;
 
   const [cardIsVisible, setCardVisible] = useState(false);
 
@@ -16,6 +16,9 @@ export function Field(props) {
     <div onClick={() => changeFieldPosition(rowIndex, fieldIndex - 1, fieldIndex,  field)} className="move-btn move-left">&lt;</div>
     <div onClick={() => setCardVisible(true)} className="element-data">
       <span>{fieldToString()}</span>
+    </div>
+    <div>
+      <span onClick={() => deleteField(rowIndex, fieldIndex)} className="delete-btn">&#10005;</span>
     </div>
     <div onClick={() => changeFieldPosition(rowIndex, fieldIndex + 1, fieldIndex, field)} className="move-btn move-right">&gt;</div>
   </div>

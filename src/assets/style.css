@@ -95,10 +95,10 @@ li {
 }
 
 .styles-list {
-  height: 150px;
+  height: 158px;
   overflow-x: hidden;
   overflow-y: auto;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .card-row {
@@ -140,4 +140,16 @@ li {
   margin: 1px 0;
   text-align: center;
   cursor: pointer;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 1px;
+}
+
+.delete-li-element {
+  display: flex;
+  align-items: center;
 }

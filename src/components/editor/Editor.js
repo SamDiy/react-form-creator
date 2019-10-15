@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 
 import { Field } from './fields';
 
-function Redactor() {
+function Redactor(props) {
 
-  const [rows, setRows] = useState([]);
+  const { onChangeCard, card } = props;
+  const rows = card.rows || [];
+  // const [rows, setRows] = useState([]);
 
   const addNewRow = () => {
-    setRows([...rows, []]);
+    onChangeCard({ rows: [...rows, []] });
   }
 
   const addNewField = (index) => {
     let newRows = [...rows];
     let newRow = [...newRows[index], {}];
     newRows[index] = newRow;
-    setRows(newRows);
+    onChangeCard({ rows: newRows });
   }
 
   const changeFieldPosition = (rowIndex, position, oldPosition, field) => {
@@ -26,7 +28,7 @@ function Redactor() {
     row[oldPosition] = movedElement;
     row[position] = field;
     newRows[rowIndex] = row;
-    setRows(newRows);
+    onChangeCard({ rows: newRows });
   }
 
   const changeRowPosition = (position, oldPosition, row) => {
@@ -35,13 +37,28 @@ function Redactor() {
       return;
     newRows[oldPosition] = newRows[position];
     newRows[position] = row;
-    setRows(newRows);
+    onChangeCard({ rows: newRows });
   }
 
   const saveField = (rowIndex, fieldIndex, field) => {
     let newRows = [...rows];
     newRows[rowIndex][fieldIndex] = field;
-    setRows(newRows);
+    onChangeCard({ rows: newRows });
+  }
+
+  const deleteField = (rowIndex, fieldIndex) => {
+    if(!confirm('Do you shure you want to delete it'))
+     return;
+    let newRows = [...rows];
+    newRows[rowIndex] = newRows[rowIndex].filter((field, index) => index != fieldIndex);
+    onChangeCard({ rows: newRows });
+  }
+
+  const deleteRow = (rowIndex) => {
+    if(!confirm('Do you shure you want to delete it'))
+     return;
+    let newRows = [...rows];
+    onChangeCard({ rows: newRows.filter((row, index) => index != rowIndex) });
   }
 
   return <div>
@@ -50,6 +67,11 @@ function Redactor() {
       {rows.map((row, rowIndex) =>
         <li key={rowIndex}>
           <ul className="inline-ul">
+            <li className="inline-li delete-li-element">
+              <div >
+                <span onClick={() => deleteRow(rowIndex)} className="delete-btn">&#10005;</span>
+              </div>
+            </li>
             <li className="inline-li">
               <div onClick={() => changeRowPosition(rowIndex - 1, rowIndex, row)} className="move-row-btn"><span className="rotate-sign">&lt;</span></div>
               <div onClick={() => addNewField(rowIndex)} className="button-new-field">+</div>
@@ -57,7 +79,7 @@ function Redactor() {
             </li>
             {row.map((field, fieldIndex) =>
               <li className="inline-li" key={fieldIndex}>
-                <Field saveField={saveField} rowIndex={rowIndex} changeFieldPosition={changeFieldPosition} field={field} fieldIndex={fieldIndex}/>
+                <Field deleteField={deleteField} saveField={saveField} rowIndex={rowIndex} changeFieldPosition={changeFieldPosition} field={field} fieldIndex={fieldIndex}/>
               </li>
             )}
           </ul>

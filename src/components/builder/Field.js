@@ -46,8 +46,19 @@ export function Field (props) {
     }
   }
 
+  const getElement = () => {
+    if(fieldView.type == "select") {
+      const fieldOptions = fieldView.options || [];
+      return React.createElement("select", getFieldProps(),
+        fieldOptions.map((item) => React.createElement("option", { key: item.value, value: item.value }, item.title))
+      );
+    } else {
+      return React.createElement("input", getFieldProps());
+    }
+  }
+
   return React.createElement(React.Fragment, {},
     getElementLabel(), 
-    React.createElement("input", getFieldProps())
+    getElement()
   )
 }
