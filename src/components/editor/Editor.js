@@ -9,14 +9,14 @@ function Redactor(props) {
   // const [rows, setRows] = useState([]);
 
   const addNewRow = () => {
-    onChangeCard({ rows: [...rows, []] });
+    onChangeCard({ data: {}, rows: [...rows, []] });
   }
 
   const addNewField = (index) => {
     let newRows = [...rows];
     let newRow = [...newRows[index], {}];
     newRows[index] = newRow;
-    onChangeCard({ rows: newRows });
+    onChangeCard({ data: {}, rows: newRows });
   }
 
   const changeFieldPosition = (rowIndex, position, oldPosition, field) => {
@@ -28,7 +28,7 @@ function Redactor(props) {
     row[oldPosition] = movedElement;
     row[position] = field;
     newRows[rowIndex] = row;
-    onChangeCard({ rows: newRows });
+    onChangeCard({ data: {}, rows: newRows });
   }
 
   const changeRowPosition = (position, oldPosition, row) => {
@@ -37,13 +37,13 @@ function Redactor(props) {
       return;
     newRows[oldPosition] = newRows[position];
     newRows[position] = row;
-    onChangeCard({ rows: newRows });
+    onChangeCard({ data: {}, rows: newRows });
   }
 
   const saveField = (rowIndex, fieldIndex, field) => {
     let newRows = [...rows];
     newRows[rowIndex][fieldIndex] = field;
-    onChangeCard({ rows: newRows });
+    onChangeCard({ data: {}, rows: newRows });
   }
 
   const deleteField = (rowIndex, fieldIndex) => {
@@ -51,14 +51,14 @@ function Redactor(props) {
      return;
     let newRows = [...rows];
     newRows[rowIndex] = newRows[rowIndex].filter((field, index) => index != fieldIndex);
-    onChangeCard({ rows: newRows });
+    onChangeCard({ data: {}, rows: newRows });
   }
 
   const deleteRow = (rowIndex) => {
     if(!confirm('Do you shure you want to delete it'))
      return;
     let newRows = [...rows];
-    onChangeCard({ rows: newRows.filter((row, index) => index != rowIndex) });
+    onChangeCard({ data: {}, rows: newRows.filter((row, index) => index != rowIndex) });
   }
 
   return <div>
