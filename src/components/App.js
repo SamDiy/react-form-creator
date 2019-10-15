@@ -19,8 +19,8 @@ function App() {
   }
 
   return <Fragment>
-    {/* <Editor onChangeCard={onChangeCard} card={card}/> */}
-    <Builder onChangeData={onChangeData} cardField={{ data, view: jsonData.rows }}/>
+    <Editor onChangeCard={onChangeCard} card={card}/> 
+    {/* <Builder onChangeData={onChangeData} cardField={{ data, view: jsonData.rows }}/> */}
   </Fragment>
 }
 

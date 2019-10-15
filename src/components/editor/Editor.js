@@ -69,7 +69,7 @@ function Redactor(props) {
           <ul className="inline-ul">
             <li className="inline-li delete-li-element">
               <div >
-                <span onClick={() => deleteRow(rowIndex)} className="delete-btn">&#10005;</span>
+                <span onClick={() => deleteRow(rowIndex)} className="delete-btn btn-all-border">&#10005;</span>
               </div>
             </li>
             <li className="inline-li">

@@ -94,6 +94,11 @@ li {
   overflow: hidden;
 }
 
+.element-data span {
+  padding: 2px;
+  white-space: nowrap;
+}
+
 .styles-list {
   height: 158px;
   overflow-x: hidden;
@@ -143,10 +148,19 @@ li {
 }
 
 .delete-btn {
-  background-color: red;
-  color: white;
+  /* background-color: red;
+  color: white; */
   cursor: pointer;
   padding: 1px;
+}
+
+.btn-all-border {
+  border: dashed 1px black;
+}
+
+.btn-left-bottom-border {
+  border-bottom: dashed 1px black;
+  border-left: dashed 1px black;
 }
 
 .delete-li-element {
