@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Field } from './fields';
 
-function Redactor(props) {
+export function Editor(props) {
 
   const { onChangeCard, card } = props;
   const rows = card.rows || [];
@@ -89,4 +89,4 @@ function Redactor(props) {
   </div>
 }
 
-export default Redactor;
+// export default Redactor;

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Field } from './Field';
 
-function Builder(props) {
+export function Builder(props) {
   let { cardField, onChangeData } = props;
   let view = cardField.view || [];
   const data = cardField.data || {};
@@ -27,6 +27,4 @@ function Builder(props) {
   </Fragment>
 }
 
-
-// React.createElement("div", { className: "my-div" }, "Builder");
-export default Builder;
+// export default Builder;
